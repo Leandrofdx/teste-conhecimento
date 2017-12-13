@@ -1,0 +1,261 @@
+@font-face {
+	font-family: 'Segoe UI';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Segoe UI'), url('fonts/segoeui.woff') format('woff');
+}
+
+$cinza-Background: #f4f4f2;
+$cor-branco: #fff;
+$vermelho-conteudo: #ee4948;
+$font: 'Segoe UI';
+$size-bloco: 100%;
+$size-fonte: 100%;
+
+html {
+	background: $cinza-Background;
+	border-top:  5px solid $vermelho-conteudo;
+}
+
+body {
+	font: normal $size-fonte $font;
+}
+
+header {
+	width: $size-bloco;
+	height: auto;
+	h1 {
+		text-align: center;
+		display: none;
+		color: #333;
+	}
+	figure {
+		max-width: 34.1rem;
+		padding: 0 0.63rem;
+		margin: 0 auto;
+		display: block;
+		img {
+			display: block;
+			margin: 0 auto;
+			max-width: $size-fonte;
+		 }
+	}
+}
+
+main {
+	max-width: 60rem;
+	margin: 4rem auto 10%;
+	overflow: hidden;
+	margin-top: 4rem;
+	display: block;
+	.home {
+		ul.materias, ul.como-funciona {
+			padding: 0;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			li {
+				width: 32.5%;
+				height: 6.25rem;
+				display: block;
+				background: $cor-branco;
+				border: 1px solid #dfdfdd;
+				margin-bottom: 1%;
+				margin-bottom: 0.5rem;
+				 a {
+					height: 6.25rem;
+					display: block;
+					display: flex;
+					align-items: center;
+					color: #000;
+					text-decoration: none;
+
+					img {
+						padding: 0 1.25rem;
+					}
+
+				}
+				a:hover {
+					text-decoration: underline;
+					img {
+						  -webkit-transform: scale(1.1);
+							-moz-transform: scale(1.1);
+							-o-transform: scale(1.1);
+							-ms-transform: scale(1.1);
+							transform: scale(1.1);
+					}
+				}
+
+			}
+			li:hover {
+				box-shadow: 5px 5px 5px #dedede;
+			}
+
+
+		}
+		h2 {
+			color: #333333;
+			font-size: 1.125rem;
+			font-style: normal;
+			font-weight: normal;
+			background: url('../imagens/background/seta-pequena.png') 160px 11px no-repeat;
+		}
+
+		ul.como-funciona {
+			li {
+				width: 28%;
+				display: flex;
+				color: #ee4948;
+				align-items: center;
+				position: relative;
+
+				span {
+					font-size: 5rem;
+					padding: 0 1rem;
+				}
+
+				p {
+					font-size: 1.25rem;
+					text-align: center;
+				}
+
+			}
+
+			li:after {
+				content: "";
+				width: 2rem;
+				height: 3.6rem;
+				right: -3.4rem;
+				top: 1.2rem;
+				background: url('../imagens/background/seta.png');
+				position: absolute;
+			}
+		}
+
+		@media (max-width: 800px) {
+			ul.materias, ul.como-funciona, h2 {
+			
+				padding: 0 2rem;
+
+				li {
+					width: 100%;
+				}
+
+				li:after {
+					display: none;
+				}
+			}
+			h2 {
+				background-position: 191px 11px;
+			}
+		}
+
+	}
+
+	.questao {
+			max-width: 37.5rem;
+			margin: 0 auto;
+			padding: 0 0.63rem;
+			
+		header {
+			font-size: 1.4rem;
+			color: $vermelho-conteudo;
+			margin-bottom: 3.125rem;
+
+			p {
+				margin: 0 0 2rem;
+			}
+
+			.acoes, a {
+				color: #333;
+				text-decoration: none;
+				font-size: 1.2rem;
+				display: flex;
+				justify-content: flex-end;
+
+				a:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	
+	}
+
+	.alternativas {
+
+		ul { 
+			padding: 0;
+			display: flex;
+			flex-wrap: wrap;
+			margin-bottom: 3.125rem;
+			justify-content: space-between;
+
+			li {
+				display: flex;
+				align-items: center;
+				width: 15.4rem;
+				height: 4.4rem;
+				margin-bottom: 3.125rem;
+				background: url('../imagens/background/botoes.png') 100% 100% no-repeat;
+
+				input[type="checkbox"] {
+					margin-left: 1.9rem;
+				}
+				label {
+					padding: 1rem 9rem 1rem 0.5rem;
+					cursor: pointer;
+					font-size: 1.4rem;
+					color: $cor-branco;
+				}
+			}
+		li:hover {
+			  -webkit-transform: scale(1.1);
+			-moz-transform: scale(1.1);
+			-o-transform: scale(1.1);
+			-ms-transform: scale(1.1);
+			transform: scale(1.1);
+			}
+
+		}
+
+		button {
+			width: 100%;
+			font-size: 1.4rem;
+			padding: 0.8rem;
+			margin-bottom: 3.125rem;
+			border: 3px solid $vermelho-conteudo;
+			color: $cor-branco;
+			background: $vermelho-conteudo;
+			cursor: pointer;
+			border-radius: 0.8rem;
+		}
+	
+	}
+	.inicio {
+		font-size: 1.4rem;
+		color: $vermelho-conteudo;
+		text-decoration: none;
+	}
+
+	.finish {
+		text-align: center;
+		margin: 0 auto;
+	}
+
+	.finish img:hover {
+		-webkit-transform: scale(1.1);
+		-moz-transform: scale(1.1);
+		-o-transform: scale(1.1);
+		-ms-transform: scale(1.1);
+		transform: scale(1.1);
+	}
+}
+
+footer {
+	width: 100%;
+
+	color: #fff;
+	text-align: center;
+	background: #b33736;
+
+}
