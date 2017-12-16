@@ -1,0 +1,73 @@
+{
+  "matters": [
+    {
+      "id": "matematica",
+      "name": "Matemática",
+      "imagePath": "assets/svg/matematica.svg"
+    },
+    {
+      "id": "biologia",
+      "name": "Biologia",
+      "imagePath": "assets/svg/biologia.svg"
+    },
+    {
+      "id": "atualidades",
+      "name": "Atualidades",
+      "imagePath": "assets/svg/atualidades.svg"
+    },
+    {
+      "id": "filosofia",
+      "name": "Filosofia",
+      "imagePath": "assets/svg/filosofia.svg"
+    },
+    {
+      "id": "design",
+      "name": "Design",
+      "imagePath": "assets/svg/design.svg"
+    },
+    {
+      "id": "artes",
+      "name": "Artes",
+      "imagePath": "assets/svg/artes.svg"
+    }
+  ],
+    "questions": [
+    {
+      "id": "matematica",
+      "name": "Matemática",
+      "alternatives": [
+        {
+          "id": 1,
+          "question": "1Pergunta Das opções abaixo, qual é um laticinio",
+          "options":[{ "optionA": "donut", "optionB": "milk",  "optionC": "broa", "optionD": "steps" }],
+          "response": "OptionA"
+        },
+               {
+          "id": 2,
+          "question": "2Pergunta Das opções abaixo, qual é um laticinio",
+          "options":[{ "optionA": "donut", "optionB": "milk",  "optionC": "broa", "optionD": "steps" }],
+          "response": "OptionA"
+        },
+        {
+          "id": 3,
+          "question": "3Pergunta Das opções abaixo, qual é um laticinio",
+          "options":[{ "optionA": "donut", "optionB": "milk",  "optionC": "broa", "optionD": "steps" }],
+          "response": "OptionA"
+        },
+        {
+          "id": 4,
+          "question": "4Pergunta Das opções abaixo, qual é um laticinio",
+          "options":[{ "optionA": "donut", "optionB": "milk",  "optionC": "broa", "optionD": "steps" }],
+          "response": "OptionA"
+        },
+        {
+          "id": 5,
+          "question": "5Pergunta Das opções abaixo, qual é um laticinio",
+          "options":[{ "optionA": "donut", "optionB": "milk",  "optionC": "broa", "optionD": "steps" }],
+          "response": "OptionA"
+        }
+
+      ]
+    }    
+  ]
+}
