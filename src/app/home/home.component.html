@@ -1,0 +1,28 @@
+<section class="home">
+	<article>
+		<ul class="materias">
+			<li *ngFor="let item of matters">
+				<a [routerLink]="['/questions', item.id]" class="{{item.id}}">
+					<img width="60" height="" src="{{item.imagePath}}" alt="{{item.name}}"/>{{item.name}}
+				</a>
+			</li>
+		</ul>
+	</article>
+	<article>
+		<h2>Veja como funciona</h2>
+		<ul class="como-funciona">
+			<li>
+				<span>1</span>
+				<p>Selecione <br> uma matéria</p>
+			</li>
+			<li>
+				<span>2</span>
+				<p>Escolha uma <br> resposta correta</p>
+			</li>
+			<li>
+				<span>3</span>
+				<p>Valide <br> seu resultado</p>
+			</li>
+		</ul>
+	</article>
+</section>
