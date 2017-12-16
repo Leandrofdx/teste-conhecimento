@@ -1,20 +1,5 @@
-{{question?.id}}<br>
-{{question?.question}}<br>
-{{question?.response}}<br>
-{{question?.respondido}}<br>
-esse impresso direto {{options}}
-
-	<div *ngFor="let item of question?.options">
-		{{item}}
-	</div>
-	
-	<div *ngFor="let item of objeto">
-		{{item}}
-	</div>
-
-	
-
 <section class="questao">
+
 	<header>
 		<p *ngIf="!play">
 			Oi, tudo bem?  <br /> <br /> 
@@ -22,8 +7,13 @@ esse impresso direto {{options}}
 		</p>
 
 		<p *ngIf="play">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, libero non! Nostrum voluptatum quod suscipit totam. Voluptatum facilis illum voluptas explicabo tempora. Et minima perspiciatis eveniet doloribus tempore atque. Repellendus!
+
+			<span *ngFor="let item of objeto">
+				{{item.question}}
+
+			</span>
 		</p>
+		
 
 		<div class="acoes" *ngIf="play">
 			<time>02:00&nbsp;</time> | &nbsp;<a [routerLink]="['/']">Desistir</a>
@@ -33,26 +23,17 @@ esse impresso direto {{options}}
 	<article class="alternativas">
 		<form *ngIf="play">
 			<ul>
-				<li>
-					<input type="checkbox" name="opcao-a" id="opcao-a" value="opcao-a">
-					<label for="opcao-a">Boy</label>
+				<li *ngFor="let option of options; let i = index">
+					<input type="checkbox" name="{{questions.id}}-{{i}}" id="{{questions.id}}-{{i}}" value="">
+					<label for="{{questions.id}}-{{i}}">{{option}}</label>
 				</li>
-				<li>
-					<input type="checkbox" name="opcao-b" id="opcao-b" value="opcao-b">
-					<label for="opcao-b">Man</label>
-				</li>
-				<li>
-					<input type="checkbox" name="opcao-c" id="opcao-c" value="opcao-c">
-					<label for="opcao-c">BoyMan</label>
-				</li>
-				<li>
-					<input type="checkbox" name="opcao-d" id="opcao-d" value="opcao-d">
-					<label for="opcao-d">Mam</label>
-				</li>
+
 			</ul>
 			<button type="button" (click)="start()">Confirmar</button>
 		</form>
 
-		<button type="button" *ngIf="!play" (click)="start()">Começar</button>
+		<button type="button" *ngIf="!play"
+		 (click)="continuar()"
+		 >Começar</button>
 	</article>
 </section>
