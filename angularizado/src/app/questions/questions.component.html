@@ -25,7 +25,7 @@
 		<div class="status-win" *ngIf="status; else lose">	<strong>Parabéns! </strong>resposta Correta</div>
 		<ng-template #lose>
 			<div class="status-lose">
-				<strong>Você errou! </strong>- mas não tem problema
+				<strong>Você errou! </strong>- a resposta correta é {{respostaCorreta}}
 			</div>
 		</ng-template>
 	</div>

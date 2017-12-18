@@ -41,6 +41,7 @@ export class QuestionsComponent implements OnInit {
 	public myOptions
 	public cont:number = 1
 	public optionsForm: FormGroup
+	public respostaCorreta
 
 	public errou = []
 	public acertou = []
@@ -145,6 +146,8 @@ export class QuestionsComponent implements OnInit {
 	result() {
 		this.cont++
 		const respostaCorreta = this.objeto[0].response
+		this.respostaCorreta = this.objeto[0].response
+		
 		var resposta = this.myOptions.value[0]
 
 		if(resposta === respostaCorreta && this.myOptions.value.length <= 1) {
