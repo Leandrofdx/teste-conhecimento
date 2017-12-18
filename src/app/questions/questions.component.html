@@ -1,39 +1,54 @@
 <section class="questao">
+	<header [@row]="ready">
 
-	<header>
-		<p *ngIf="!play">
-			Oi, tudo bem?  <br /> <br /> 
-			Serão 5 perguntas e você terá apenas 30 segundos para responder cada uma das alternativas. boa sorte
-		</p>
+		<div>
+			<div *ngIf="!play; else elseBlock" >
+				<div class="acoes">
+					<a [routerLink]="['/']">Desistir</a>
+				</div>
+				<p>
+					Oi, tudo bem?  <br /> <br /> 
+					Serão 5 perguntas e você terá apenas 30 segundos para responder cada uma das alternativas. boa sorte
+				</p>
+				<button type="button" (click)="continuar()">Começar</button>
+			</div>
+			<ng-template #elseBlock>
+				<span *ngFor="let item of objeto">{{item.question}}</span>
 
-		<p *ngIf="play">
-
-			<span *ngFor="let item of objeto">
-				{{item.question}}
-
-			</span>
-		</p>
-		
-
-		<div class="acoes" *ngIf="play">
-			<time>02:00&nbsp;</time> | &nbsp;<a [routerLink]="['/']">Desistir</a>
+				<div class="acoes">
+					<a [routerLink]="['/']">Desistir</a>
+				</div>
+			</ng-template>
 		</div>
 	</header>
+	<div *ngIf="visible">
+		<div class="status-win" *ngIf="status; else lose">	<strong>Parabéns! </strong>resposta Correta</div>
+		<ng-template #lose>
+			<div class="status-lose">
+				<strong>Você errou! </strong>- mas não tem problema
+			</div>
+		</ng-template>
+	</div>
 
 	<article class="alternativas">
-		<form *ngIf="play">
+
+		<form *ngIf="play" [formGroup]="optionsForm" novalidate>
 			<ul>
-				<li *ngFor="let option of options; let i = index">
-					<input type="checkbox" name="{{questions.id}}-{{i}}" id="{{questions.id}}-{{i}}" value="">
+				<li *ngFor="let option of options; let i = index" [@row]="ready">
+					<input type="checkbox" id="{{questions.id}}-{{i}}"
+					name="{{questions.id}}-{{i}}" (change)="onChange(option, $event.target.checked)"
+					>
 					<label for="{{questions.id}}-{{i}}">{{option}}</label>
 				</li>
-
 			</ul>
-			<button type="button" (click)="start()">Confirmar</button>
+			<button type="button" [disabled]="!optionsForm.valid" (click)="start()">
+				<div *ngIf="!end">
+					<span *ngIf="!visible">Confirmar</span>
+					<span *ngIf="visible">Continuar</span>
+				</div>
+				<span *ngIf="end">Resultado</span>
+			</button>
 		</form>
 
-		<button type="button" *ngIf="!play"
-		 (click)="continuar()"
-		 >Começar</button>
 	</article>
 </section>

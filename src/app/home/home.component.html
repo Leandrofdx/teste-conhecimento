@@ -1,7 +1,7 @@
 <section class="home">
 	<article>
 		<ul class="materias">
-			<li *ngFor="let item of matters">
+			<li *ngFor="let item of matters" [@row]="ready">
 				<a [routerLink]="['/questions', item.id]" class="{{item.id}}">
 					<img width="60" height="" src="{{item.imagePath}}" alt="{{item.name}}"/>{{item.name}}
 				</a>

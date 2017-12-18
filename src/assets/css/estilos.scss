@@ -1,3 +1,4 @@
+// sass --watch estilos.scss:estilos.css
 @font-face {
 	font-family: 'Segoe UI';
 	font-style: normal;
@@ -15,6 +16,8 @@ $size-fonte: 100%;
 html {
 	background: $cinza-Background;
 	border-top:  5px solid $vermelho-conteudo;
+	position: relative;
+	min-height: 100%;
 }
 
 body {
@@ -42,6 +45,24 @@ header {
 	}
 }
 
+button {
+	font-family: "Segoe Ui";
+	width: 100%;
+	font-size: 1.4rem;
+	padding: 0.8rem;
+	margin-bottom: 3.125rem;
+	border: 3px solid $vermelho-conteudo;
+	color: $cor-branco;
+	background: $vermelho-conteudo;
+	cursor: pointer;
+	border-radius: 0.8rem;
+}
+
+button:disabled {
+	background: #ccc;
+	border: none;
+}
+		
 main {
 	max-width: 60rem;
 	margin: 4rem auto 10%;
@@ -182,12 +203,12 @@ main {
 	}
 
 	.alternativas {
-
+		position: relative;
 		ul { 
 			padding: 0;
 			display: flex;
 			flex-wrap: wrap;
-			margin-bottom: 3.125rem;
+			margin-bottom: 2.125rem;
 			justify-content: space-between;
 
 			li {
@@ -195,7 +216,7 @@ main {
 				align-items: center;
 				width: 15.4rem;
 				height: 4.4rem;
-				margin-bottom: 3.125rem;
+				margin-bottom: 2.125rem;
 				background: url('../imagens/background/botoes.png') 100% 100% no-repeat;
 
 				input[type="checkbox"] {
@@ -218,16 +239,13 @@ main {
 
 		}
 
-		button {
+		.mask {
 			width: 100%;
-			font-size: 1.4rem;
-			padding: 0.8rem;
-			margin-bottom: 3.125rem;
-			border: 3px solid $vermelho-conteudo;
-			color: $cor-branco;
-			background: $vermelho-conteudo;
-			cursor: pointer;
-			border-radius: 0.8rem;
+			min-height: 100%;
+			background: #000;
+			opacity: 0.5;
+			border-radius: 2rem;
+			position: absolute;
 		}
 	
 	}
@@ -253,9 +271,28 @@ main {
 
 footer {
 	width: 100%;
-
+	position: absolute;
+	bottom: 0;
 	color: #fff;
 	text-align: center;
 	background: #b33736;
 
+}
+
+.status-win, .status-lose {
+	text-align: center;
+	padding: 0.8rem 0;
+	margin-bottom: 1rem;
+}
+
+.status-win {
+	color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+.status-lose {
+	 color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
 }

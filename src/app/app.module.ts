@@ -1,13 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 // rotas
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routes';
 
 // serviços
 import { HomeService } from './home/home.service'
-import { QuestionsService } from './questions/questions.service'
+import { QuestionsService } from './questions/service/questions.service'
 // HTTP
 import { HttpClientModule } from '@angular/common/http';
 
@@ -32,6 +33,7 @@ import { LoseComponent } from './lose/lose.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     RouterModule,
     RouterModule.forRoot(ROUTES),
     HttpClientModule,
